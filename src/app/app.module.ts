@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ContasPage } from '../pages/contas/contas';
+import { ModalContasPage } from '../pages/modal-contas/modal-contas';
 import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -15,6 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ContasPage,
+    ModalContasPage,
     ListPage
   ],
   imports: [
@@ -26,6 +28,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ContasPage,
+    ModalContasPage,
     ListPage
   ],
   providers: [
