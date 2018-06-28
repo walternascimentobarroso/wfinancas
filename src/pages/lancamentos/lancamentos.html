@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>List</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item-sliding *ngFor="let item of listContas">
+            <ion-item (click)="edit(item)">
+                <ion-row>
+                    <ion-col width-67>
+                        <h1>{{ item.descricao }}</h1>
+                        <p>{{ item.conta }}</p>
+                        <p>{{ item.data }}</p>
+                    </ion-col>
+
+                    <ion-col width-33>
+                        <p>{{ item.valor }}</p>
+                        <p>{{ item.pago }}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-item>
+            <ion-item-options>
+                <button ion-button expandable color="danger" (click)="delete(item)">
+                    <ion-icon name="trash"></ion-icon>
+                    Excluir
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+    <ion-fab right top edge>
+        <button ion-fab mini color="danger" (click)="insert()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>
