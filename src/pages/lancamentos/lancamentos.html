@@ -10,9 +10,10 @@
 
 
 <ion-content padding>
+    <data-filter (changeMonth)="updateMonth()"></data-filter>
     <ion-list>
         <ion-item-sliding *ngFor="let item of listContas">
-            <ion-item (click)="edit(item)">
+            <ion-item [ngClass]="item.tipo == 'in' ? 'entrada' : 'saida'" (click)="edit(item)">
                 <ion-row>
                     <ion-col width-67>
                         <h1>{{ item.descricao }}</h1>
@@ -22,7 +23,8 @@
 
                     <ion-col width-33>
                         <p>{{ item.valor }}</p>
-                        <p>{{ item.pago }}</p>
+                        <p *ngIf="item.pago == true">Pago</p>
+                        <p *ngIf="item.pago != true">Não Pago</p>
                     </ion-col>
                 </ion-row>
             </ion-item>

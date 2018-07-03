@@ -9,7 +9,7 @@ import { ModalContasPage } from "../pages/modal-contas/modal-contas";
 import { LancamentosPage } from "../pages/lancamentos/lancamentos";
 import { ModalLancamentoPage } from "../pages/modal-lancamento/modal-lancamento";
 import { ListPage } from "../pages/list/list";
-
+import { DataFilterComponent } from "../components/data-filter/data-filter";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
@@ -21,6 +21,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
         ModalContasPage,
         LancamentosPage,
         ModalLancamentoPage,
+        DataFilterComponent,
         ListPage
     ],
     imports: [BrowserModule, IonicModule.forRoot(MyApp)],
@@ -32,6 +33,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
         ModalContasPage,
         LancamentosPage,
         ModalLancamentoPage,
+        DataFilterComponent,
         ListPage
     ],
     providers: [

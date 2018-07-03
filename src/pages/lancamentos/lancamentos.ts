@@ -27,6 +27,10 @@ export class LancamentosPage {
         this.listContas = this.dao.getList();
     }
 
+    updateMonth() {
+        console.log("show");
+    }
+
     toast(msg) {
         const toast = this.toastCtrl.create({
             message: msg,
@@ -56,7 +60,6 @@ export class LancamentosPage {
         });
         modal.present();
     }
-
 
     delete(lancamento) {
         const prompt = this.alertCtrl.create({
