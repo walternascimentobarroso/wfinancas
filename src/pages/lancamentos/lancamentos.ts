@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import {
+    AlertController,
     ModalController,
     NavController,
     NavParams,
@@ -17,6 +18,7 @@ export class LancamentosPage {
     dao = new DAOLancamentos();
 
     constructor(
+        public alertCtrl: AlertController,
         public modalCtrl: ModalController,
         public navCtrl: NavController,
         public navParams: NavParams,
@@ -42,5 +44,35 @@ export class LancamentosPage {
             this.toast("Lançamento Criada");
         });
         modal.present();
+    }
+
+    edit(lancamento) {
+        const modal = this.modalCtrl.create(ModalLancamentoPage, {
+            parametro: lancamento
+        });
+        modal.onDidDismiss(data => {
+            this.dao.edit(data);
+            this.toast("Lancamento Editado");
+        });
+        modal.present();
+    }
+
+
+    delete(lancamento) {
+        const prompt = this.alertCtrl.create({
+            title: "Excluir lancamento",
+            message: "Tem certeza que deseja excluir a lancamento?",
+            buttons: [
+                { text: "Cancelar" },
+                {
+                    text: "Excluir",
+                    handler: data => {
+                        this.dao.delete(lancamento);
+                        this.toast("Lancamento Excluido");
+                    }
+                }
+            ]
+        });
+        prompt.present();
     }
 }

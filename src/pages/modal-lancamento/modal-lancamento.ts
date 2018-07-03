@@ -15,7 +15,9 @@ export class ModalLancamentoPage {
         public navParams: NavParams,
         public viewCtrl: ViewController
     ) {
-        this.lancamento = {};
+        this.lancamento = navParams.get("parametro")
+            ? navParams.get("parametro")
+            : { descricao: "" };
         this.listContas = this.dao.getList();
     }
 
