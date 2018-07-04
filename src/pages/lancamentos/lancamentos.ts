@@ -9,6 +9,7 @@ import {
 } from "ionic-angular";
 import { ModalLancamentoPage } from "../modal-lancamento/modal-lancamento";
 import { DAOLancamentos } from "../../dao/dao-lancamentos";
+import { RelatorioPage } from "../relatorio/relatorio";
 
 @Component({
     selector: "page-lancamentos",
@@ -27,6 +28,14 @@ export class LancamentosPage {
         public events: Events
     ) {
         this.listContas = this.dao.getList();
+    }
+
+    onClickMonth() {
+        this.navCtrl.push(RelatorioPage);
+    }
+
+    changePaymentStatus(lancamento) {
+        lancamento.pago = lancamento.pago ? false : true;
     }
 
     updateMonth(data) {

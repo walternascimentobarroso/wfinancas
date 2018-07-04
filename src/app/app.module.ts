@@ -6,6 +6,7 @@ import { MyApp } from "./app.component";
 import { HomePage } from "../pages/home/home";
 import { ContasPage } from "../pages/contas/contas";
 import { SaldoPage } from "../pages/saldo/saldo";
+import { RelatorioPage } from "../pages/relatorio/relatorio";
 import { ModalContasPage } from "../pages/modal-contas/modal-contas";
 import { LancamentosPage } from "../pages/lancamentos/lancamentos";
 import { ModalLancamentoPage } from "../pages/modal-lancamento/modal-lancamento";
@@ -20,6 +21,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
         HomePage,
         SaldoPage,
         ContasPage,
+        RelatorioPage,
         ModalContasPage,
         LancamentosPage,
         ModalLancamentoPage,
@@ -33,6 +35,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
         HomePage,
         SaldoPage,
         ContasPage,
+        RelatorioPage,
         ModalContasPage,
         LancamentosPage,
         ModalLancamentoPage,

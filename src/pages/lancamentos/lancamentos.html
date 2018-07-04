@@ -10,7 +10,7 @@
 
 
 <ion-content padding>
-    <data-filter (changeMonth)="updateMonth($event)"></data-filter>
+    <data-filter (changeMonth)="updateMonth($event)" (clickMonth)="onClickMonth()"></data-filter>
     <ion-list>
         <ion-item-sliding *ngFor="let item of listContas">
             <ion-item [ngClass]="item.tipo == 'in' ? 'entrada' : 'saida'" (click)="edit(item)">
@@ -29,6 +29,11 @@
                 </ion-row>
             </ion-item>
             <ion-item-options>
+                <button ion-button expandable (click)="changePaymentStatus(item)">
+                    <ion-icon name="Cash"></ion-icon>
+                    <span *ngIf="item.pago != true">Pagar</span>
+                    <span *ngIf="item.pago == true">Reabrir</span>
+                </button>
                 <button ion-button expandable color="danger" (click)="delete(item)">
                     <ion-icon name="trash"></ion-icon>
                     Excluir

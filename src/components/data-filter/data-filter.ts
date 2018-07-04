@@ -8,11 +8,17 @@ export class DataFilterComponent {
     @Input() selectMonth;
     @Input() startDate;
     @Output() changeMonth;
+    @Output() clickMonth;
 
     constructor() {
-        this.changeMonth = new EventEmitter;
+        this.changeMonth = new EventEmitter();
+        this.clickMonth = new EventEmitter();
         this.startDate = new Date();
         this.monthSelect(this.startDate);
+    }
+
+    executeClickMonth() {
+        this.clickMonth.next();
     }
 
     executeChangeMonth() {
