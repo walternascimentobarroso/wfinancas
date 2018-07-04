@@ -4,7 +4,8 @@ import {
     ModalController,
     NavController,
     NavParams,
-    ToastController
+    ToastController,
+    Events
 } from "ionic-angular";
 import { ModalLancamentoPage } from "../modal-lancamento/modal-lancamento";
 import { DAOLancamentos } from "../../dao/dao-lancamentos";
@@ -22,13 +23,15 @@ export class LancamentosPage {
         public modalCtrl: ModalController,
         public navCtrl: NavController,
         public navParams: NavParams,
-        public toastCtrl: ToastController
+        public toastCtrl: ToastController,
+        public events: Events
     ) {
         this.listContas = this.dao.getList();
     }
 
-    updateMonth() {
-        console.log("show");
+    updateMonth(data) {
+        this.events.publish("saldo:update", 50);
+        console.log(data);
     }
 
     toast(msg) {

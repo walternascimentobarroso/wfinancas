@@ -10,7 +10,7 @@
 
 
 <ion-content padding>
-    <data-filter (changeMonth)="updateMonth()"></data-filter>
+    <data-filter (changeMonth)="updateMonth($event)"></data-filter>
     <ion-list>
         <ion-item-sliding *ngFor="let item of listContas">
             <ion-item [ngClass]="item.tipo == 'in' ? 'entrada' : 'saida'" (click)="edit(item)">

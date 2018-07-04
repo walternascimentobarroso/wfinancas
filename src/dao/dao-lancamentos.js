@@ -23,4 +23,8 @@ export class DAOLancamentos {
         let pos = this.list.indexOf(lancamento);
         this.list.splice(pos, 1);
     }
+
+    getSaldo() {
+        return "1000";
+    }
 }

@@ -16,7 +16,7 @@ export class DataFilterComponent {
     }
 
     executeChangeMonth() {
-        this.changeMonth.next();
+        this.changeMonth.next(this.startDate);
     }
 
     monthSelect(date) {

@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 import { MyApp } from "./app.component";
 import { HomePage } from "../pages/home/home";
 import { ContasPage } from "../pages/contas/contas";
+import { SaldoPage } from "../pages/saldo/saldo";
 import { ModalContasPage } from "../pages/modal-contas/modal-contas";
 import { LancamentosPage } from "../pages/lancamentos/lancamentos";
 import { ModalLancamentoPage } from "../pages/modal-lancamento/modal-lancamento";
@@ -17,6 +18,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
     declarations: [
         MyApp,
         HomePage,
+        SaldoPage,
         ContasPage,
         ModalContasPage,
         LancamentosPage,
@@ -29,6 +31,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
     entryComponents: [
         MyApp,
         HomePage,
+        SaldoPage,
         ContasPage,
         ModalContasPage,
         LancamentosPage,
