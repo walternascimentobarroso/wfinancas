@@ -1,13 +1,11 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color='primary'>
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>List</ion-title>
+        <ion-title>Lançamentos</ion-title>
     </ion-navbar>
 </ion-header>
-
-
 
 <ion-content padding>
     <data-filter (changeMonth)="updateMonth($event)" (clickMonth)="onClickMonth()"></data-filter>
@@ -30,7 +28,7 @@
             </ion-item>
             <ion-item-options>
                 <button ion-button expandable (click)="changePaymentStatus(item)">
-                    <ion-icon name="Cash"></ion-icon>
+                    <ion-icon name="cash"></ion-icon>
                     <span *ngIf="item.pago != true">Pagar</span>
                     <span *ngIf="item.pago == true">Reabrir</span>
                 </button>

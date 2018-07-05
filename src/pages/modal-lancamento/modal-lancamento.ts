@@ -7,7 +7,7 @@ import { DAOContas } from "../../dao/dao-contas";
     templateUrl: "modal-lancamento.html"
 })
 export class ModalLancamentoPage {
-    lancamento;
+    lancamento:any;
     listContas;
     dao = new DAOContas();
     constructor(
@@ -16,9 +16,10 @@ export class ModalLancamentoPage {
         public viewCtrl: ViewController
     ) {
         this.lancamento = navParams.get("parametro")
-            ? navParams.get("parametro")
-            : { descricao: "" };
+        ? navParams.get("parametro")
+        : { descricao: "" };
         this.listContas = this.dao.getList();
+        this.lancamento.data = new Date().toISOString();
     }
 
     dismiss() {

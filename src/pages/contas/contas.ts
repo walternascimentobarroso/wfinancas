@@ -40,8 +40,10 @@ export class ContasPage {
     insert() {
         const modal = this.modalCtrl.create(ModalContasPage);
         modal.onDidDismiss(data => {
-            this.dao.insert(data);
-            this.toast("Conta Criada");
+            if (data) {
+                this.dao.insert(data);
+                this.toast("Conta Criada");
+            }
         });
         modal.present();
     }
@@ -51,8 +53,10 @@ export class ContasPage {
             parametro: conta
         });
         modal.onDidDismiss(data => {
-            this.dao.edit(data);
-            this.toast("Conta Editada");
+            if (data) {
+                this.dao.edit(data);
+                this.toast("Conta Editada");
+            }
         });
         modal.present();
     }

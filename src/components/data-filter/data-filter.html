@@ -1,15 +1,9 @@
-<ion-row>
-    <ion-col width-10>
-        <button favorite clear round (click)="previousMonth()">
-            <ion-icon name="arrow-dropleft-circle"></ion-icon>
-        </button>
-    </ion-col>
-    <ion-col width-75>
-        <h4 class="texto-destaque" favorite (click)="executeClickMonth()">{{selectMonth}}</h4>
-    </ion-col>
-    <ion-col width-10="">
-        <button favorite clear round (click)="nextMonth()">
-            <ion-icon name="arrow-dropright-circle"></ion-icon>
-        </button>
-    </ion-col>
+<ion-row class="color">
+    <button ion-button color="secondary" clear (click)="previousMonth()">
+        <ion-icon name="arrow-dropleft-circle"></ion-icon>
+    </button>
+    <h4 (click)="executeClickMonth()">{{selectMonth}}</h4>
+    <button ion-button color="secondary" clear (click)="nextMonth()">
+        <ion-icon name="arrow-dropright-circle"></ion-icon>
+    </button>
 </ion-row>

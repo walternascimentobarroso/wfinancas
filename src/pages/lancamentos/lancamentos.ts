@@ -40,7 +40,6 @@ export class LancamentosPage {
 
     updateMonth(data) {
         this.events.publish("saldo:update", 50);
-        console.log(data);
     }
 
     toast(msg) {
@@ -56,8 +55,10 @@ export class LancamentosPage {
     insert() {
         const modal = this.modalCtrl.create(ModalLancamentoPage);
         modal.onDidDismiss(data => {
-            this.dao.insert(data);
-            this.toast("Lançamento Criada");
+            if (data) {
+                this.dao.insert(data);
+                this.toast("Lançamento Criada");
+            }
         });
         modal.present();
     }
@@ -67,8 +68,10 @@ export class LancamentosPage {
             parametro: lancamento
         });
         modal.onDidDismiss(data => {
-            this.dao.edit(data);
-            this.toast("Lancamento Editado");
+            if (data) {
+                this.dao.edit(data);
+                this.toast("Lancamento Editado");
+            }
         });
         modal.present();
     }

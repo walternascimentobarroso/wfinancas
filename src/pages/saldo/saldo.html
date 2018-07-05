@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color='primary'>
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
@@ -8,6 +8,12 @@
 </ion-header>
 
 <ion-content padding>
-    <h1 class="texto-destaque">{{ saldo}}</h1>
-    <!-- <h1 class="texto-destaque">{{ saldo | currency:"BRL":true:1.2 }}</h1> -->
+    <ion-card>
+        <ion-card-header>
+            <h1>{{ saldo | currency:"BRL" }}</h1>
+        </ion-card-header>
+        <ion-card-content>
+            Saldo atual depesas(saidas) menos a entrada(receita)
+        </ion-card-content>
+    </ion-card>
 </ion-content>
