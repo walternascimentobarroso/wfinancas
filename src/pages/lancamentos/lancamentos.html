@@ -41,8 +41,16 @@
     </ion-list>
 
     <ion-fab right top edge>
-        <button ion-fab mini color="danger" (click)="insert()">
+        <button ion-fab mini color="light">
             <ion-icon name="add"></ion-icon>
         </button>
+        <ion-fab-list>
+            <button (click)="insert()" ion-fab color="secondary">
+                <ion-icon name="add"></ion-icon>
+            </button>
+            <button (click)="insert()" ion-fab color="danger">
+                <ion-icon name="remove"></ion-icon>
+            </button>
+        </ion-fab-list>
     </ion-fab>
 </ion-content>
