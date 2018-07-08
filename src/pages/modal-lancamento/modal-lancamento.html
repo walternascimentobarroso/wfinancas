@@ -37,6 +37,11 @@
         </ion-item>
 
         <ion-item>
+            <ion-label>Fixa(mensal)</ion-label>
+            <ion-toggle color="secondary" [(ngModel)]="lancamento.fixa"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
             <ion-label>Conta</ion-label>
             <ion-select [(ngModel)]="lancamento.conta">
                 <ion-option *ngFor="let item of listContas" [value]="item.descricao">
