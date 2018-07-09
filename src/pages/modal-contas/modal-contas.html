@@ -17,6 +17,10 @@
             <ion-label stacked>Descricao</ion-label>
             <ion-input [(ngModel)]="conta.descricao"></ion-input>
         </ion-item>
+        <ion-item>
+            <ion-label stacked>Valor</ion-label>
+            <ion-input  type="number" [(ngModel)]="conta.valor"></ion-input>
+        </ion-item>
     </ion-list>
 
     <button ion-button block color="secondary" outline round (click)="salvar()">Salvar</button>

@@ -12,7 +12,12 @@
     <ion-list>
         <ion-item-sliding *ngFor="let item of listContas">
             <ion-item (click)="edit(item)">
-                {{ item.descricao }}
+                <ion-row>
+                    <ion-col>
+                        <h2>{{ item.descricao }}</h2>
+                        <p>{{ item.valor | currency:"BRL" }}</p>
+                    </ion-col>
+                </ion-row>
             </ion-item>
             <ion-item-options>
                 <button ion-button expandable color="danger" (click)="delete(item)">
